@@ -1,0 +1,28 @@
+package in.ashokit.binding;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "BOOK_DTLS")
+public class Book {
+	@Id
+	@Column(name = "BOOK_ID")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private Integer bookId;
+	@Column(name = "BOOK_NAME")
+	private String bookName;
+	@Column(name = "BOOK_PRICE")
+	private Double bookPrice;
+
+}
